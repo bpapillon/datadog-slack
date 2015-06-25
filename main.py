@@ -5,7 +5,7 @@ app = Flask(__name__)
 datadog.initialize(statsd_host='localhost', statsd_port=8126)
 
 
-@app.route('/message', methods=['GET', 'POST'])
+@app.route('/message', methods=['POST'])
 def message():
     channel = request.form.get('channel_name')
     if channel:
